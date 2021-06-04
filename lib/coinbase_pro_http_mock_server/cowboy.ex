@@ -1,4 +1,3 @@
-
 defmodule CoinbaseProHttpMockServer.Cowboy do
   defmacro __using__(opts) do
     methods = Keyword.get(opts, :methods, [])
