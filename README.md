@@ -1,5 +1,7 @@
 # CoinbaseProHttpMockServer
 
+[![codecov](https://codecov.io/gh/kiote/coinbase_pro_http_mock_server/branch/master/graph/badge.svg)](https://codecov.io/gh/kiote/coinbase_pro_http_mock_server)
+
 HTTP Request & Response Server. An incomplete clone of https://api-public.sandbox.pro.coinbase.com for mocking (testing) purposes.
 Inspired by [httparrot](https://github.com/edgurgel/httparrot).
 
