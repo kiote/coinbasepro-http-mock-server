@@ -16,12 +16,23 @@ defmodule CoinbaseProHttpMockServer.Application do
       ])
 
     children = [
-      # Starts a worker by calling: CoinbaseProHttpMockServer.Worker.start_link(arg)
-      # {CoinbaseProHttpMockServer.Worker, arg}
+      {ConCache,
+       [
+         ttl_check_interval: :timer.minutes(5),
+         global_ttl: :timer.hours(12),
+         name: :requests_registry
+       ]}
     ]
 
     {:ok, http_port} = Application.fetch_env(:coinbase_pro_http_mock_server, :http_port)
-    IO.puts("Starting HTTParrot on port #{http_port}")
+    IO.puts("Starting CoinbaseProHttpMockServer on port #{http_port}")
+
+    {:ok, _} =
+      :cowboy.start_clear(
+        :http,
+        [port: http_port],
+        %{env: %{dispatch: dispatch}}
+      )
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

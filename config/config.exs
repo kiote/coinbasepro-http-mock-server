@@ -13,4 +13,4 @@ config :coinbase_pro_http_mock_server,
   http_port: port,
   https_port: ssl_port,
   unix_socket: unix_socket,
-  socket_path: System.get_env("SOCKET_PATH", "mock.sock")
+  socket_path: System.get_env("SOCKET_PATH", "coinbase_pro_http_mock_server.sock")
