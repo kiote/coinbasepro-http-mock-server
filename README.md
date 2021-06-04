@@ -1,6 +1,7 @@
 # CoinbaseProHttpMockServer
 
-**TODO: Add description**
+HTTP Request & Response Server. An incomplete clone of https://api-public.sandbox.pro.coinbase.com.
+Inspired by [httparrot](https://github.com/edgurgel/httparrot).
 
 ## Installation
 
