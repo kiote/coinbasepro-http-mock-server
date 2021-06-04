@@ -9,6 +9,7 @@ defmodule CoinbaseProHttpMockServer.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
+      test_coverage: [tool: ExCoveralls],
       package: package()
     ]
   end
