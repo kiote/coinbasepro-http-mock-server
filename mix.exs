@@ -8,6 +8,7 @@ defmodule CoinbaseProHttpMockServer.MixProject do
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      description: description(),
       package: package()
     ]
   end
@@ -43,8 +44,14 @@ defmodule CoinbaseProHttpMockServer.MixProject do
 
   defp package() do
     [
+      name: "coinbase_pro_http_mock_server",
       maintainers: ["Ekaterina Krivich"],
-      licenses: ["MIT"]
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/kiote/coinbasepro-http-mock-server"}
     ]
+  end
+
+  defp description() do
+    "HTTP Request & Response Server. An incomplete clone of https://api-public.sandbox.pro.coinbase.com for mocking (testing) purposes"
   end
 end
