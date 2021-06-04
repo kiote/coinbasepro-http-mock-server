@@ -28,6 +28,7 @@ defmodule CoinbaseProHttpMockServer.MixProject do
       {:con_cache, "~> 1.0"},
       {:cowboy, "~> 2.9"},
       {:exjsx, "~> 4.0"},
+      {:plug_cowboy, "~> 2.0"},
 
       # only dev deps
       {:dialyxir, "~> 1.0", only: :dev, runtime: false},

@@ -5,16 +5,12 @@ defmodule CoinbaseProHttpMockServer.Application do
 
   use Application
 
+  alias CoinbaseProHttpMockServer.Router
+
   @impl true
   def start(_type, _args) do
-    dispatch =
-      :cowboy_router.compile([
-        {:_,
-         [
-           {"/", :cowboy_static, {:priv_file, :coinbase_pro_http_mock_server, "index.html"}},
-           {"/products", CoinbaseProHttpMockServer.ProductsHandler, []}
-         ]}
-      ])
+    {:ok, http_port} = Application.fetch_env(:coinbase_pro_http_mock_server, :http_port)
+    IO.puts("Starting CoinbaseProHttpMockServer on port #{http_port}")
 
     children = [
       {ConCache,
@@ -22,18 +18,15 @@ defmodule CoinbaseProHttpMockServer.Application do
          ttl_check_interval: :timer.minutes(5),
          global_ttl: :timer.hours(12),
          name: :requests_registry
+       ]},
+      {Plug.Cowboy,
+       scheme: :http,
+       plug: Router,
+       options: [
+         port: http_port,
+         compress: true
        ]}
     ]
-
-    {:ok, http_port} = Application.fetch_env(:coinbase_pro_http_mock_server, :http_port)
-    IO.puts("Starting CoinbaseProHttpMockServer on port #{http_port}")
-
-    {:ok, _} =
-      :cowboy.start_clear(
-        :http,
-        [port: http_port],
-        %{env: %{dispatch: dispatch}}
-      )
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
