@@ -11,7 +11,8 @@ defmodule CoinbaseProHttpMockServer.Application do
       :cowboy_router.compile([
         {:_,
          [
-           {"/", :cowboy_static, {:priv_file, :coinbase_pro_http_mock_server, "index.html"}}
+           {"/", :cowboy_static, {:priv_file, :coinbase_pro_http_mock_server, "index.html"}},
+           {"/products", CoinbaseProHttpMockServer.ProductsHandler, []}
          ]}
       ])
 
