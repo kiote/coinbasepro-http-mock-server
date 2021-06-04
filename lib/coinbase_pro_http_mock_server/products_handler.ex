@@ -1,4 +1,7 @@
 defmodule CoinbaseProHttpMockServer.ProductsHandler do
+@moduledoc """
+/products rest endpoint
+"""
   use CoinbaseProHttpMockServer.Cowboy, methods: ~w(GET HEAD OPTIONS)
 
   def content_types_provided(req, state) do
