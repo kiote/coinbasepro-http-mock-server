@@ -153,7 +153,7 @@ defmodule CoinbaseProHttpMockServer.ProductsHandlerTest do
        ], :json}
     ])
 
-    assert get_json(:req1, :state) == {:json, :req1, :state}
+    assert get_json() == :json
 
     assert validate(:cowboy_req)
     assert validate(JSX)
