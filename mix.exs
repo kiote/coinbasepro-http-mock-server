@@ -25,18 +25,18 @@ defmodule CoinbaseProHttpMockServer.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:con_cache, "~> 1.0"},
       {:cowboy, "~> 2.9"},
       {:exjsx, "~> 4.0"},
-      {:con_cache, "~> 1.0"},
 
       # only dev deps
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
       {:earmark, "~> 1.4", only: :dev},
       {:ex_doc, "~> 0.24", only: :dev},
-      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
 
       # only test deps
-      {:meck, "~> 0.9", only: :test},
       {:excoveralls, "~> 0.10", only: :test},
+      {:meck, "~> 0.9", only: :test},
 
       # dev and test deps
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
