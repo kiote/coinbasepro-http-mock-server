@@ -1,13 +1,14 @@
 # CoinbaseProHttpMockServer
 
 [![codecov](https://codecov.io/gh/kiote/coinbase_pro_http_mock_server/branch/master/graph/badge.svg)](https://codecov.io/gh/kiote/coinbase_pro_http_mock_server)
+[![Hex.pm](https://img.shields.io/hexpm/v/coinbase_pro_http_mock_server.svg?style=flat-square)](https://hex.pm/packages/coinbase_pro_http_mock_server)
 
 HTTP Request & Response Server. An incomplete clone of https://api-public.sandbox.pro.coinbase.com for mocking (testing) purposes.
 Inspired by [httparrot](https://github.com/edgurgel/httparrot).
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+[Available in Hex](https://hex.pm/packages/coinbase_pro_http_mock_server), the package can be installed
 by adding `coinbase_pro_http_mock_server` to your list of dependencies in `mix.exs`:
 
 ```elixir
