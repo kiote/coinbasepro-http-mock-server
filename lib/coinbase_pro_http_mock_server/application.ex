@@ -9,7 +9,7 @@ defmodule CoinbaseProHttpMockServer.Application do
 
   @impl true
   def start(_type, _args) do
-    {:ok, http_port} = Application.fetch_env(:coinbase_pro_http_mock_server, :http_port)
+    http_port = Application.get_env(:coinbase_pro_http_mock_server, :http_port, 8080)
     IO.puts("Starting CoinbaseProHttpMockServer on port #{http_port}")
 
     children = [
