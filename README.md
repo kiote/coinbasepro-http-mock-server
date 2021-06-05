@@ -14,7 +14,7 @@ by adding `coinbase_pro_http_mock_server` to your list of dependencies in `mix.e
 ```elixir
 def deps do
   [
-    {:coinbase_pro_http_mock_server, "~> 0.1.0"}
+    {:coinbase_pro_http_mock_server, "~> 0.1.1"}
   ]
 end
 ```
