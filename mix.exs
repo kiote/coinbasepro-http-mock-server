@@ -58,12 +58,10 @@ defmodule CoinbaseProHttpMockServer.MixProject do
     "HTTP Request & Response Server. An incomplete clone of https://api-public.sandbox.pro.coinbase.com for mocking (testing) purposes"
   end
 
-  defp dialyzer() do
-    plt_core_path = "_build/#{Mix.env()}"
-
+  defp dialyzer do
     [
-      plt_core_path: plt_core_path,
-      plt_file: {:no_warn, "#{plt_core_path}/dialyzer.plt"}
+      plt_core_path: "priv/plts",
+      plt_file: {:no_warn, "priv/plts/dialyzer.plt"}
     ]
   end
 end
