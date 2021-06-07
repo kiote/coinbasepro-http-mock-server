@@ -5,7 +5,11 @@ defmodule CoinbaseProHttpMockServer.Router do
   plug(:dispatch)
 
   get "/products" do
-    send_resp(conn, 200, CoinbaseProHttpMockServer.ProductsHandler.get_json())
+    send_resp(conn, 200, CoinbaseProHttpMockServer.ProductsHandler.products())
+  end
+
+  get "/products/BTC-EUR/stats" do
+    send_resp(conn, 200, CoinbaseProHttpMockServer.ProductsHandler.btc_eur_stats())
   end
 
   match _ do

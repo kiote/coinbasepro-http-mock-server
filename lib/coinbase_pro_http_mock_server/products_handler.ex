@@ -1,8 +1,8 @@
 defmodule CoinbaseProHttpMockServer.ProductsHandler do
   @moduledoc """
-  /products rest endpoint
+  /products rest endpoints
   """
-  def get_json() do
+  def products() do
     [
       %{
         id: "LINK-USDC",
@@ -138,6 +138,18 @@ defmodule CoinbaseProHttpMockServer.ProductsHandler do
         status_message: ""
       }
     ]
+    |> JSX.encode!()
+  end
+
+  def btc_eur_stats() do
+    %{
+      "high" => "30265.29",
+      "last" => "29943.53",
+      "low" => "29715.1",
+      "open" => "29733.45",
+      "volume" => "17.00318652",
+      "volume_30day" => "15131.56489343"
+    }
     |> JSX.encode!()
   end
 end
