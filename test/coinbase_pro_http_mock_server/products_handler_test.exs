@@ -158,4 +158,26 @@ defmodule CoinbaseProHttpMockServer.ProductsHandlerTest do
     assert validate(:cowboy_req)
     assert validate(JSX)
   end
+
+  test "btc_eur stats" do
+    expect(:cowboy_req, :parse_header, 2, :undefined)
+
+    expect(JSX, :encode!, [
+      {[
+         %{
+           "high" => "30265.29",
+           "last" => "29943.53",
+           "low" => "29715.1",
+           "open" => "29733.45",
+           "volume" => "17.00318652",
+           "volume_30day" => "15131.56489343"
+         }
+       ], :json}
+    ])
+
+    assert btc_eur_stats() == :json
+
+    assert validate(:cowboy_req)
+    assert validate(JSX)
+  end
 end
