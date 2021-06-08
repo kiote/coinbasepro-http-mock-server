@@ -12,6 +12,10 @@ defmodule CoinbaseProHttpMockServer.Router do
     send_resp(conn, 200, CoinbaseProHttpMockServer.ProductsHandler.btc_eur_stats())
   end
 
+  get "/accounts" do
+    send_resp(conn, 200, CoinbaseProHttpMockServer.AccountsHandler.accounts())
+  end
+
   match _ do
     send_resp(conn, 404, "oops")
   end
