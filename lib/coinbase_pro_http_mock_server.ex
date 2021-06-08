@@ -1,2 +1,0 @@
-defmodule CoinbaseProHttpMockServer do
-end
