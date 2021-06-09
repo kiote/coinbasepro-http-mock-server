@@ -1,19 +1,27 @@
 defmodule CoinbaseProHttpMockServer.Router do
   use Plug.Router
 
+  alias CoinbaseProHttpMockServer.Handlers.Accounts
+  alias CoinbaseProHttpMockServer.Handlers.Products
+  alias CoinbaseProHttpMockServer.Handlers.Orders
+
   plug(:match)
   plug(:dispatch)
 
   get "/products" do
-    send_resp(conn, 200, CoinbaseProHttpMockServer.ProductsHandler.products())
+    send_resp(conn, 200, Products.products())
   end
 
   get "/products/BTC-EUR/stats" do
-    send_resp(conn, 200, CoinbaseProHttpMockServer.ProductsHandler.btc_eur_stats())
+    send_resp(conn, 200, Products.btc_eur_stats())
   end
 
   get "/accounts" do
-    send_resp(conn, 200, CoinbaseProHttpMockServer.AccountsHandler.accounts())
+    send_resp(conn, 200, Accounts.accounts())
+  end
+
+  post "/orders" do
+    send_resp(conn, 200, Orders.order())
   end
 
   match _ do

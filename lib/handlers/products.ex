@@ -1,4 +1,4 @@
-defmodule CoinbaseProHttpMockServer.ProductsHandler do
+defmodule CoinbaseProHttpMockServer.Handlers.Products do
   @moduledoc """
   /products rest endpoints
   """

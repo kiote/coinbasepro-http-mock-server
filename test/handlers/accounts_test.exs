@@ -1,7 +1,7 @@
-defmodule CoinbaseProHttpMockServer.AccountsHandlerTest do
+defmodule CoinbaseProHttpMockServer.Handlers.AccountsTest do
   use ExUnit.Case
   import :meck
-  import CoinbaseProHttpMockServer.AccountsHandler
+  import CoinbaseProHttpMockServer.Handlers.Accounts
 
   setup do
     new(:cowboy_req)
