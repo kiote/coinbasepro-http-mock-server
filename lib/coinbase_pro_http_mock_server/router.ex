@@ -2,8 +2,8 @@ defmodule CoinbaseProHttpMockServer.Router do
   use Plug.Router
 
   alias CoinbaseProHttpMockServer.Handlers.Accounts
-  alias CoinbaseProHttpMockServer.Handlers.Products
   alias CoinbaseProHttpMockServer.Handlers.Orders
+  alias CoinbaseProHttpMockServer.Handlers.Products
 
   plug(:match)
   plug(:dispatch)
